@@ -1,0 +1,141 @@
+/* MAIN LAYOUT */
+.home-container {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 8%;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  background: #0f172a; /* Dark gradient look */
+}
+
+/* 🔥 GRADIENT GLOW BACKGROUND BLOBS */
+.bg-glow-1,
+.bg-glow-2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  filter: blur(160px);
+  opacity: 0.4;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.bg-glow-1 {
+  background: #6a5bff;
+  top: -80px;
+  left: -80px;
+  animation: glowMove 7s infinite alternate ease-in-out;
+}
+
+.bg-glow-2 {
+  background: #00eaff;
+  bottom: -100px;
+  right: -100px;
+  animation: glowMove 6s infinite alternate ease-in-out;
+}
+
+@keyframes glowMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(30px, -20px); }
+}
+
+/* CONTENT SECTION */
+.hero-content {
+  max-width: 600px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-title span {
+  background: linear-gradient(90deg, #ff7bff, #6a5bff, #00eaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text {
+  font-size: 18px;
+  color: #cbd5e1;
+  margin-bottom: 25px;
+  max-width: 550px;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  padding: 12px 26px;
+  background: #6a5bff;
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 0 20px #6a5bff50;
+}
+
+.btn-primary:hover {
+  background: #4b3aff;
+  box-shadow: 0 0 25px #6a5bff90;
+}
+
+.btn-whatsapp {
+  padding: 12px 26px;
+  border: 2px solid #25d366;
+  color: #25d366;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-whatsapp:hover {
+  background: #25d366;
+  color: #fff;
+}
+
+/* IMAGES */
+.hero-image img {
+  width: 420px;
+  margin-top: 30px;
+  animation: float 4s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+
+/* FLOAT ANIMATION */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 900px) {
+  .hero-title {
+    font-size: 36px;
+  }
+  .hero-content {
+    text-align: center;
+  }
+  .hero-image img {
+    width: 300px;
+  }
+}
