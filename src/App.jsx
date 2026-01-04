@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import Home from "./Components/Home";
-import Services from "./Components/Services";
+import Services from "./Components/services";
 import Projects from "./Components/Projects";
 import About from "./About";
 import Contact from "./Components/Contact";
